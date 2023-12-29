@@ -1,0 +1,45 @@
+diff --git a/package.json b/package.json
+index 5e6f723347743a81f4e04de202e4ee841abad4f7..f19dd23df4ad91570b717306ed0a6951de3186aa 100644
+--- a/package.json
++++ b/package.json
+@@ -3,25 +3,7 @@
+   "version": "2.0.3",
+   "main": "./dist/cjs/index.js",
+   "types": "./dist/cjs/index.d.ts",
+-  "module": "./dist/esm/index.js",
+   "style": "./styles.css",
+-  "exports": {
+-    ".": {
+-      "require": {
+-        "types": "./dist/cjs/index.d.ts",
+-        "default": "./dist/cjs/index.js"
+-      },
+-      "import": {
+-        "types": "./dist/esm/index.d.ts",
+-        "default": "./dist/esm/index.js"
+-      }
+-    },
+-    "./styles.css": {
+-      "import": "./styles.css",
+-      "require": "./styles.css",
+-      "default": "./styles.css"
+-    }
+-  },
+   "sideEffects": false,
+   "license": "MIT",
+   "files": [
+@@ -30,14 +12,10 @@
+   ],
+   "scripts": {
+     "build": "yarn build:js && yarn build:css",
+-    "build:js": "yarn build:js:cjs && yarn build:js:esm",
+     "build:js:cjs": "tsc --project tsconfig-cjs.json",
+-    "build:js:esm": "tsc --project tsconfig-esm.json",
+     "build:css": "postcss src/styles/index.css -o styles.css",
+     "dev": "yarn dev:js & yarn dev:css",
+-    "dev:js": "yarn dev:js:cjs & yarn dev:js:esm",
+     "dev:js:cjs": "tsc --project tsconfig-cjs.json --watch",
+-    "dev:js:esm": "tsc --project tsconfig-esm.json --watch",
+     "dev:css": "postcss src/styles/index.css -o styles.css --watch",
+     "lint": "yarn lint:js && yarn lint:css",
+     "lint:js": "eslint \"src/**/*.ts*\"",

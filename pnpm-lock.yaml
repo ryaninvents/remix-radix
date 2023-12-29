@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@radix-ui/themes@2.0.3':
+    hash: ztcaclszag3xiix7hjpuub2cyy
+    path: .config/pnpm-patches/@radix-ui__themes@2.0.3.patch
+
 importers:
 
   .: {}
@@ -12,7 +17,7 @@ importers:
     dependencies:
       '@radix-ui/themes':
         specifier: ^2.0.3
-        version: 2.0.3(react-dom@18.2.0)(react@18.2.0)
+        version: 2.0.3(patch_hash=ztcaclszag3xiix7hjpuub2cyy)(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/node':
         specifier: ^2.4.1
         version: 2.4.1
@@ -1892,7 +1897,7 @@ packages:
       '@babel/runtime': 7.23.6
     dev: false
 
-  /@radix-ui/themes@2.0.3(react-dom@18.2.0)(react@18.2.0):
+  /@radix-ui/themes@2.0.3(patch_hash=ztcaclszag3xiix7hjpuub2cyy)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-yaXQ8aWT2P1CQ0Xe6YCRD9HXsfMTvKkrIYkrc4aitCzhGTLS0sjtTqKmrxIWMVA+3DIbEuG9K/8aAMRJBhep8g==}
     peerDependencies:
       '@types/react': '*'
@@ -1935,6 +1940,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
+    patched: true
 
   /@remix-run/dev@2.4.1(@remix-run/serve@2.4.1):
     resolution: {integrity: sha512-T8GLCKpZ8AX/NCJ+vyMmcTq328xo9stvDSXG2hSJx7njz4Q9sC25miQLXPRb3Lx/Sdf4YlJhWQpR6uq5pnXCZg==}

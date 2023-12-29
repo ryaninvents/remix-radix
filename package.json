@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "pnpm": {
+    "patchedDependencies": {
+      "@radix-ui/themes@2.0.3": ".config/pnpm-patches/@radix-ui__themes@2.0.3.patch"
+    }
+  }
 }
